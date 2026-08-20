@@ -32,6 +32,28 @@ const Pedido = () => {
             )
         );
     };
+    
+    //FILTER - Seleciona apenas os produtos disponiveis e do carrinho 
+    const produtosDisponiveis = items.filter(item=>item.disponivel);
+    const carrinho = items.filter(item=>item.quantidade > 0);
+    
+    //REDUCE - Calcula a soma dos items (preco * quantidade) e adiciona a taxa de entrega
+    const subtotal = carrinho.reduce((ac,item)=> ac = item.preco * item.quantidade,0)
+    const total = subtotal > 0 ? subtotal + taxaEntrega :0; 
+    
+    //SIMULAÇAO DO CICLO DE VIDA DA ENTREGA USANDO TEMPORIZADORES ASSINCRONOS
+    const confirmarPedido=()=>
+      setEnviar(true);
+      setStatus("Restaurante preparando seu pedido...")
+      setTimeout(()=>{
+        setStatus("Seu pedido saiu para entrega!")
+        setEnviar(false)
+      },5000);
+      setTimeout(()=>{
+        setStatus("Seu pedido foi entregue com sucesso!")
+        setEnviar(false)
+      },10000)
+
 
     return (
     <>
