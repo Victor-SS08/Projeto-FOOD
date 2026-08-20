@@ -1,0 +1,75 @@
+:root{
+    --color1:#eee;
+    --color2:#ccc;
+    --color3:#f8f8f8;
+    --color4:#333;
+    --color5:#ea122c;
+    --color6:#0050b3;
+}
+.container{
+    padding:20px;
+    max-width:400px;
+    margin:0;
+    border:1px solid var(--color1);
+}
+.item-cardapio{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.item-controles{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.btn-qtn{
+    padding: 4px 10px;
+    border: 1px solid var(--color2);
+    background: var(--color3);
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-qtn:disabled{
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+.linha{
+    border: none;
+    border-top: 1px solid var(--color1);
+}
+.resumo-lista{
+    padding-left: 20px;
+    margin-bottom: 12px;
+}
+.total{
+    display: block;
+    font: size 1.2rem;
+    margin: 10px;
+    color:var(--color4);
+
+}
+.btn-confirmar{
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    background:var(--color5);
+    color:var(--color1);
+    font-weight: 700;
+    border: none;
+    border-radius:5px ;
+    cursor:pointer;
+    
+}
+.btn-confirmar:disabled{
+    background: var(--color2);
+    cursor: not-allowed;
+}
+.alerta-status{
+    margin-top: 16px;
+    padding:12px;
+    background:var(--color2);
+    border: 12px solid var(--color2);
+    color:var(--color6)
+
+}
